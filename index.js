@@ -3,7 +3,9 @@ const pexelsApi = "https://api.pexels.com/v1/search?query=italy"
 
 // !NAV SECTION
 
-const nav = document.querySelector(".container-nav")
+let nav = document.createElement("div")
+nav.setAttribute("class", "container-nav")
+document.body.appendChild(nav)
 
 nav.innerHTML += `<div class="title">
 <h1>Album Fotografico</h1>
@@ -17,6 +19,8 @@ nav.innerHTML += `<div class="title">
 
 
 // !CONTAINER CARDS
+
+let containerCards = document.createElement("div")
 const fetchImg = () => (
     fetch(pexelsApi, {
         headers: {
@@ -26,18 +30,22 @@ const fetchImg = () => (
     .then((res) => res.json())
     .then((data) => {
         console.log(data);
-       let containerCards = document.querySelector(".container-cards")
+       
+       containerCards.setAttribute("class", "container-cards row")
+       document.body.appendChild(containerCards)
        containerCards.innerHTML = data.photos.map((photo) => {
         
         return `<div class="card col-4">
         <img src="${photo.src.medium}" alt="img"/>
         <p> ${photo.alt} </p>
         <h6> Photographer:  ${photo.photographer} </h6>
-        
         </div>`
        }) 
        .join("")
+       
     })
+    .catch((err) => 
+    console.error(err))
 
 fetchImg()
-
+       
