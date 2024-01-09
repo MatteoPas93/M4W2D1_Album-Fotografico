@@ -1,0 +1,30 @@
+.container-cards {
+    margin-inline: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 250px;
+    height: auto;
+    margin-block: 10px;
+    padding: 0;
+    border: 1px solid black;
+    margin-inline: 10px;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 5px 5px 0px 0px;
+    
+}
+
+.card p {
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.card h6 {
+    margin-left: 5px;
+}
