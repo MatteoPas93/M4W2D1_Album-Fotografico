@@ -33,7 +33,7 @@ export const fetchImg = () =>
 
       containerCards.setAttribute("class", "container-cards row");
       document.body.appendChild(containerCards);
-      containerCards.innerHTML = data.photos.map((photo) => {
+      containerCards.innerHTML += data.photos.map((photo) => {
           return `<div class="card col-4">
                      <img src="${photo.src.medium}" alt="img"/>
                          <div class="heart-icon">
