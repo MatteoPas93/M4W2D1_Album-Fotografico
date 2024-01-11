@@ -33,6 +33,7 @@ export const fetchImg = () =>
 
       containerCards.setAttribute("class", "container-cards row");
       document.body.appendChild(containerCards);
+
       containerCards.innerHTML += data.photos.map((photo) => {
           return `<div class="card col-4 d-flex">
                      <img src="${photo.src.medium}" alt="img"/>
@@ -43,14 +44,15 @@ export const fetchImg = () =>
                           </div>
                               <p> ${photo.alt} </p>
                               <h6> Photographer:  ${photo.photographer} </h6>
-                              <div class="container-button">
-                              <button class="open-button">
-                              <a> Open Image </a>
-                              </button>
-                              </div>
+                                <div class="container-button">
+                                  <button class="open-button">
+                                    <a href=""> Open Image </a>
+                                  </button>
+                                </div>
                     </div>`;
         })
         .join("");
+      
     })
     .catch((err) => console.error(err));
 
