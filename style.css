@@ -41,8 +41,11 @@ body {
   border: 1px solid black;
   margin-inline: 10px;
   border-radius: 5px 5px 5px 0px;
-  /* box-shadow: -5px 5px 5px gray; */
+  box-shadow: -5px 5px 5px cadetblue;
   transition: 0.4s;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .card:hover {
@@ -79,7 +82,24 @@ body {
 
 .heart-icon svg:hover {
   color: red;
-  animation: rotate 2s linear;
+  animation: rotate 1s linear;
+}
+
+.container-button {
+  margin-left: 60%;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  
+}
+
+.open-button {
+   background: cadetblue;
+   border-radius: 0px 0px 5px ;
+}
+
+.open-button a {
+  font-family: "Caveat";
+  font-size: 20px;
 }
 
 @keyframes rotate {

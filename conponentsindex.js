@@ -34,7 +34,7 @@ export const fetchImg = () =>
       containerCards.setAttribute("class", "container-cards row");
       document.body.appendChild(containerCards);
       containerCards.innerHTML += data.photos.map((photo) => {
-          return `<div class="card col-4">
+          return `<div class="card col-4 d-flex">
                      <img src="${photo.src.medium}" alt="img"/>
                          <div class="heart-icon">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
@@ -43,6 +43,11 @@ export const fetchImg = () =>
                           </div>
                               <p> ${photo.alt} </p>
                               <h6> Photographer:  ${photo.photographer} </h6>
+                              <div class="container-button">
+                              <button class="open-button">
+                              <a> Open Image </a>
+                              </button>
+                              </div>
                     </div>`;
         })
         .join("");
